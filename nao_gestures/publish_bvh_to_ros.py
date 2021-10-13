@@ -18,7 +18,7 @@ def main():
     pub = rospy.Publisher(args.topic, String)
     rospy.init_node('bvh_publisher', anonymous=True)
     msg = String()
-    msg.data = pickle.dumps(mocap_data)
+    msg.data = pickle.dumps(mocap_data).decode('latin1')
     pub.publish(msg)
 
 
